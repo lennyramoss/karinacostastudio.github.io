@@ -1,0 +1,28 @@
+import { About } from "@/components/About";
+import { BookingProvider } from "@/components/booking/BookingProvider";
+import { FinalCTA } from "@/components/FinalCTA";
+import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
+import { Location } from "@/components/Location";
+import { Products } from "@/components/Products";
+import { Results } from "@/components/Results";
+import { Services } from "@/components/Services";
+import { Testimonials } from "@/components/Testimonials";
+
+export default function HomePage() {
+  return (
+    <BookingProvider>
+      <main>
+        <Hero />
+        <Services />
+        <Results />
+        <About />
+        <Testimonials />
+        <Products />
+        <FinalCTA />
+        <Location />
+        <Footer />
+      </main>
+    </BookingProvider>
+  );
+}
