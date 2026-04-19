@@ -1,5 +1,6 @@
 import { About } from "@/components/About";
 import { BookingProvider } from "@/components/booking/BookingProvider";
+import { Collabs } from "@/components/Collabs";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
@@ -16,6 +17,7 @@ export default function HomePage() {
         <Hero />
         <Services />
         <Results />
+        <Collabs />
         <About />
         <Testimonials />
         <Products />

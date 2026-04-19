@@ -2,13 +2,13 @@ export const services = [
   {
     title: "Cejas",
     description:
-      "Diseño y perfilado, laminado de cejas, color touch, threading, lifting, nutrición y botox en cejas y pestañas.",
+      "Diseño y perfilado, laminado de cejas, color touch, microblanding, threading, lifting, nutrición y botox en cejas y pestañas.",
     image: "/placeholders/service-brows.svg",
     alt: "Placeholder de tratamiento de cejas para Karina Studio +",
   },
   {
     title: "Labios",
-    description: "Microblading, pixel lips, hidra lips y babylips.",
+    description: "Pixel lips, hidra lips y babylips.",
     image: "/placeholders/service-lips.svg",
     alt: "Placeholder de tratamiento de labios para Karina Studio +",
   },
@@ -52,6 +52,33 @@ export const testimonials = [
   {
     quote: "Resultados visibles desde la primera sesión.",
     name: "Camila P.",
+  },
+];
+
+export const collabs = [
+  {
+    label: "Premios Cleopatra",
+    title: "Trabajamos junto a Premios Cleopatra",
+    description:
+      "Participación en experiencias de belleza y estética vinculadas a eventos y producciones especiales.",
+    image: "/colabs/cleopatra_colab.jpg",
+    alt: "Equipo de Karina Studio + en colaboración con Premios Cleopatra",
+  },
+  {
+    label: "Cocos",
+    title: "Colaboración con Cocos",
+    description:
+      "Acompañamos acciones de imagen, cuidado personal y preparación estética para marcas y equipos.",
+    image: "/colabs/cocoscap_colabo.jpg",
+    alt: "Colaboración de Karina Studio + con Cocos",
+  },
+  {
+    label: "Coty Romero",
+    title: "Trabajo con Coty Romero",
+    description:
+      "Servicios de cejas y beauty care para perfiles públicos, creadoras y referentes de estilo.",
+    image: "/colabs/cotyromero_colab.jpg",
+    alt: "Karina Studio + trabajando con Coty Romero en un tratamiento de cejas",
   },
 ];
 
