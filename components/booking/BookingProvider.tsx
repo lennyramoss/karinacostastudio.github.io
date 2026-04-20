@@ -526,7 +526,7 @@ function StepChooseTime({
               className={[
                 "focus-ring rounded-[1.4rem] border px-4 py-4 text-sm font-medium transition-colors sm:text-base",
                 !slot.available
-                  ? "cursor-not-allowed border-line/70 bg-white/40 text-muted/60"
+                  ? "cursor-not-allowed border-neutral-400/70 bg-neutral-300/80 text-neutral-700"
                   : isSelected
                     ? "border-accent bg-accent text-white"
                     : "border-line bg-white/70 text-text hover:bg-accent-soft",

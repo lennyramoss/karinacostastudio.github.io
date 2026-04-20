@@ -20,9 +20,8 @@ export function Footer() {
               Contacto
             </h3>
             <ul className="mt-4 space-y-3 leading-6">
-              <li>+54 11 4567 8901</li>
-              <li>hola@karinastudio.com</li>
-              <li>Av. Libertador 1250, San Fernando</li>
+              <li>+54 11 7861-1500</li>
+              <li>Sarmiento 1058, San Fernando</li>
             </ul>
           </div>
           <div>
@@ -30,9 +29,9 @@ export function Footer() {
               Redes y horario
             </h3>
             <ul className="mt-4 space-y-3 leading-6">
-              <li>@karinastudio.plus</li>
-              <li>Lunes a Viernes de 9 a 19 hs</li>
-              <li>Sábados de 9 a 14 hs</li>
+              <li>@karinaacostastudio</li>
+              <li>Lunes,Martes,Jueves y Viernes de 10 a 19 hs</li>
+              <li>Sábados de 10 a 17 hs</li>
             </ul>
           </div>
           <div>

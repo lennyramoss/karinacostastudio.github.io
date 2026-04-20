@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { FloatingBookingButton } from "@/components/booking/FloatingBookingButton";
 import { BookingProvider } from "@/components/booking/BookingProvider";
 import { Collabs } from "@/components/Collabs";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -25,6 +26,7 @@ export default function HomePage() {
         <Location />
         <Footer />
       </main>
+      <FloatingBookingButton />
     </BookingProvider>
   );
 }

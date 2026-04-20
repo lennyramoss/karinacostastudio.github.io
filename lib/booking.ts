@@ -10,6 +10,7 @@ export const bookingCategories: BookingCategory[] = [
       "Diseño y perfilado",
       "Laminado de cejas",
       "Color touch",
+      "Microblading",
       "Threading",
       "Lifting",
       "Nutrición y botox en cejas y pestañas",
@@ -18,7 +19,7 @@ export const bookingCategories: BookingCategory[] = [
   },
   {
     name: "Labios",
-    services: ["Microblading", "Pixel lips", "Hidra lips", "Babylips"],
+    services: ["Pixel lips", "Hidra lips", "Babylips"],
   },
   {
     name: "Faciales",

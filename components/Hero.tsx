@@ -7,7 +7,7 @@ export function Hero() {
       <div className="relative overflow-hidden bg-[#cfc8c0] shadow-[0_28px_90px_rgba(17,24,39,0.18)]">
         <div className="relative min-h-[82svh] sm:min-h-[88svh] lg:min-h-[90svh]">
           <Image
-            src="/hero-studio.png"
+            src="/fotos/hero-studio.webp"
             alt="Interior de Karina Studio + en San Fernando, con sala de espera y área de atención estética"
             fill
             priority

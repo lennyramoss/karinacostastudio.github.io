@@ -32,7 +32,7 @@ export function FinalCTA() {
           </div>
           <BookingTrigger
             label="Reservar turno"
-            className="premium-button mt-9 min-w-44 px-7 py-3.5"
+            className="focus-ring mt-9 inline-flex min-w-56 items-center justify-center rounded-full bg-accent px-10 py-4 text-[0.78rem] font-semibold uppercase tracking-[0.52em] text-white shadow-[0_22px_44px_rgba(15,23,42,0.22)] transition hover:-translate-y-0.5 hover:bg-white hover:text-accent hover:shadow-[0_24px_48px_rgba(15,23,42,0.24)] sm:min-w-64 sm:px-12 sm:py-5 sm:text-[0.84rem] sm:tracking-[0.58em]"
             ariaLabel="Reservar turno en Karina Studio +"
           />
         </div>

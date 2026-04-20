@@ -15,18 +15,20 @@ export function Results() {
         />
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
           {results.map((item) => (
-            <div
-              key={item.src}
-              className="card-surface relative aspect-square overflow-hidden rounded-[1.9rem]"
-            >
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                sizes="(max-width: 640px) 100vw, 50vw"
-                className="object-cover transition-transform duration-300 hover:scale-[1.015]"
-                loading="lazy"
-              />
+            <div key={item.src}>
+              <div className="card-surface relative aspect-square overflow-hidden rounded-[1.9rem]">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-300 hover:scale-[1.015]"
+                  loading="lazy"
+                />
+              </div>
+              <p className="mt-3 text-center text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500">
+                {item.caption}
+              </p>
             </div>
           ))}
         </div>
