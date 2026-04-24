@@ -32,7 +32,6 @@ export type Appointment = {
   client: string;
   service: string;
   status: AppointmentStatus;
-  room: string;
   notes?: string;
 };
 
@@ -150,7 +149,6 @@ export const appointments: Appointment[] = [
     client: "Lucia Gomez",
     service: "Diseno de servicio personalizado",
     status: "deposit_paid",
-    room: "Box 1",
     notes: "Primera sesion",
   },
   {
@@ -162,7 +160,6 @@ export const appointments: Appointment[] = [
     client: "Camila Diaz",
     service: "Diseno de cejas",
     status: "confirmed",
-    room: "Box 2",
   },
   {
     id: "apt-03",
@@ -173,7 +170,6 @@ export const appointments: Appointment[] = [
     client: "Julieta Sosa",
     service: "Limpieza facial profunda",
     status: "completed",
-    room: "Gabinete facial",
   },
   {
     id: "apt-04",
@@ -184,7 +180,6 @@ export const appointments: Appointment[] = [
     client: "Valentina Ruiz",
     service: "Seguimiento y retoque",
     status: "deposit_paid",
-    room: "Box 1",
   },
   {
     id: "apt-05",
@@ -195,7 +190,6 @@ export const appointments: Appointment[] = [
     client: "Agustina Perez",
     service: "Laminado de cejas",
     status: "awaiting_deposit",
-    room: "Box 2",
   },
   {
     id: "apt-06",
@@ -206,7 +200,6 @@ export const appointments: Appointment[] = [
     client: "Sofia Medina",
     service: "Dermaplaning glow",
     status: "confirmed",
-    room: "Gabinete facial",
   },
   {
     id: "apt-07",
@@ -217,7 +210,6 @@ export const appointments: Appointment[] = [
     client: "Brenda Castro",
     service: "Babylips",
     status: "awaiting_deposit",
-    room: "Box 1",
     notes: "Confirmar por WhatsApp",
   },
   {
@@ -229,7 +221,6 @@ export const appointments: Appointment[] = [
     client: "Rocio Alvarez",
     service: "Perfilado y henna",
     status: "completed",
-    room: "Box 2",
   },
   {
     id: "apt-09",
@@ -240,7 +231,6 @@ export const appointments: Appointment[] = [
     client: "Milagros Ferreyra",
     service: "Higiene facial con extracciones",
     status: "deposit_paid",
-    room: "Gabinete facial",
   },
   {
     id: "apt-10",
@@ -251,7 +241,6 @@ export const appointments: Appointment[] = [
     client: "Mora Rivas",
     service: "Plan de servicio y asesoramiento",
     status: "confirmed",
-    room: "Box 1",
   },
   {
     id: "apt-11",
@@ -262,7 +251,7 @@ export const appointments: Appointment[] = [
     client: "Paula Vera",
     service: "Lifting de pestanas",
     status: "deposit_paid",
-    room: "Box 2",
+
   },
   {
     id: "apt-12",
@@ -273,7 +262,6 @@ export const appointments: Appointment[] = [
     client: "Daniela Mendez",
     service: "Control y seguimiento de tratamiento",
     status: "awaiting_deposit",
-    room: "Box 1",
   },
   {
     id: "apt-13",
@@ -284,7 +272,6 @@ export const appointments: Appointment[] = [
     client: "Lara Funes",
     service: "Retoque de labios",
     status: "deposit_paid",
-    room: "Box 2",
   },
   {
     id: "apt-14",
@@ -295,7 +282,6 @@ export const appointments: Appointment[] = [
     client: "Florencia Neri",
     service: "Radiofrecuencia facial",
     status: "confirmed",
-    room: "Gabinete facial",
   },
   {
     id: "apt-15",
@@ -306,7 +292,6 @@ export const appointments: Appointment[] = [
     client: "Martina Lopez",
     service: "Consulta de seguimiento",
     status: "completed",
-    room: "Box 1",
   },
   {
     id: "apt-16",
@@ -317,7 +302,6 @@ export const appointments: Appointment[] = [
     client: "Ariana Suarez",
     service: "Hydra lips",
     status: "deposit_paid",
-    room: "Box 2",
   },
   {
     id: "apt-17",
@@ -328,7 +312,6 @@ export const appointments: Appointment[] = [
     client: "Micaela Ponce",
     service: "Perfilado y henna",
     status: "confirmed",
-    room: "Box 2",
   },
   {
     id: "apt-18",
@@ -339,7 +322,6 @@ export const appointments: Appointment[] = [
     client: "Zoe Castillo",
     service: "Lifting de pestanas",
     status: "awaiting_deposit",
-    room: "Box 3",
     notes: "Reconfirmar asistencia",
   },
   {
@@ -351,7 +333,6 @@ export const appointments: Appointment[] = [
     client: "Candela Rios",
     service: "Evaluacion de tratamiento",
     status: "cancelled",
-    room: "Box 1",
   },
   {
     id: "apt-20",
@@ -362,6 +343,5 @@ export const appointments: Appointment[] = [
     client: "Emma Torres",
     service: "Perfilado express",
     status: "deposit_paid",
-    room: "Box 2",
   },
 ];

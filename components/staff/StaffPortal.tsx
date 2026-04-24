@@ -96,11 +96,15 @@ function AppointmentCard({
   showStaff = false,
   canManage = false,
   onStatusChange,
+  onEdit,
+  onDelete,
 }: {
   appointment: Appointment;
   showStaff?: boolean;
   canManage?: boolean;
   onStatusChange?: (appointmentId: string, nextStatus: AppointmentStatus) => void;
+  onEdit?: (appointment: Appointment) => void;
+  onDelete?: (appointmentId: string) => void;
 }) {
   const staff = getProfile(appointment.staffId);
   const status = statusMeta[appointment.status];
@@ -127,9 +131,6 @@ function AppointmentCard({
           </div>
           <h3 className="mt-3 text-lg font-semibold text-text">{appointment.client}</h3>
           <p className="mt-1 text-sm leading-6 text-muted">{appointment.service}</p>
-          <p className="mt-2 text-xs uppercase tracking-[0.18em] text-muted">
-            {appointment.room}
-          </p>
           {appointment.notes ? (
             <p className="mt-3 max-w-[28rem] text-sm leading-6 text-muted">{appointment.notes}</p>
           ) : null}
@@ -165,11 +166,169 @@ function AppointmentCard({
                   </option>
                 ))}
               </select>
+              <div className="mt-3 flex gap-2">
+                {onEdit ? (
+                  <button
+                    type="button"
+                    onClick={() => onEdit(appointment)}
+                    className="focus-ring rounded-[0.8rem] border border-line bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-text shadow-soft hover:bg-accent-soft"
+                  >
+                    Editar
+                  </button>
+                ) : null}
+                {onDelete ? (
+                  <button
+                    type="button"
+                    onClick={() => onDelete(appointment.id)}
+                    className="focus-ring rounded-[0.8rem] border border-line bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-rose-700 shadow-soft hover:bg-rose-50"
+                  >
+                    Eliminar
+                  </button>
+                ) : null}
+              </div>
             </div>
           ) : null}
         </div>
       </div>
     </article>
+  );
+}
+
+function AppointmentForm({
+  appointment,
+  onSave,
+  onCancel,
+}: {
+  appointment?: Appointment | null;
+  onSave: (appointment: Appointment) => void;
+  onCancel: () => void;
+}) {
+  const [formData, setFormData] = useState({
+    staffId: appointment?.staffId || '',
+    dayId: appointment?.dayId || '',
+    time: appointment?.time || '',
+    durationMinutes: appointment?.durationMinutes || 60,
+    client: appointment?.client || '',
+    service: appointment?.service || '',
+    status: appointment?.status || 'awaiting_deposit' as AppointmentStatus,
+    notes: appointment?.notes || '',
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const apt: Appointment = {
+      id: appointment?.id || `apt-${Date.now()}`,
+      ...formData,
+    };
+    onSave(apt);
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="mt-4 grid gap-4 md:grid-cols-2">
+      <div>
+        <label className="text-sm font-semibold text-text">Trabajadora</label>
+        <select
+          value={formData.staffId}
+          onChange={(e) => setFormData({ ...formData, staffId: e.target.value })}
+          className="focus-ring mt-1 w-full rounded-[1rem] border border-line bg-white px-3 py-2 text-sm"
+          required
+        >
+          <option value="">Seleccionar...</option>
+          {staffProfiles.map((staff) => (
+            <option key={staff.id} value={staff.id}>
+              {staff.name}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label className="text-sm font-semibold text-text">Día</label>
+        <select
+          value={formData.dayId}
+          onChange={(e) => setFormData({ ...formData, dayId: e.target.value })}
+          className="focus-ring mt-1 w-full rounded-[1rem] border border-line bg-white px-3 py-2 text-sm"
+          required
+        >
+          <option value="">Seleccionar...</option>
+          {weekDays.map((day) => (
+            <option key={day.id} value={day.id}>
+              {day.label}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label className="text-sm font-semibold text-text">Hora</label>
+        <input
+          type="time"
+          value={formData.time}
+          onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+          className="focus-ring mt-1 w-full rounded-[1rem] border border-line bg-white px-3 py-2 text-sm"
+          required
+        />
+      </div>
+      <div>
+        <label className="text-sm font-semibold text-text">Duración (min)</label>
+        <input
+          type="number"
+          value={formData.durationMinutes}
+          onChange={(e) => setFormData({ ...formData, durationMinutes: parseInt(e.target.value) })}
+          className="focus-ring mt-1 w-full rounded-[1rem] border border-line bg-white px-3 py-2 text-sm"
+          required
+        />
+      </div>
+      <div>
+        <label className="text-sm font-semibold text-text">Cliente</label>
+        <input
+          type="text"
+          value={formData.client}
+          onChange={(e) => setFormData({ ...formData, client: e.target.value })}
+          className="focus-ring mt-1 w-full rounded-[1rem] border border-line bg-white px-3 py-2 text-sm"
+          required
+        />
+      </div>
+      <div>
+        <label className="text-sm font-semibold text-text">Servicio</label>
+        <input
+          type="text"
+          value={formData.service}
+          onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+          className="focus-ring mt-1 w-full rounded-[1rem] border border-line bg-white px-3 py-2 text-sm"
+          required
+        />
+      </div>
+      <div>
+        <label className="text-sm font-semibold text-text">Estado</label>
+        <select
+          value={formData.status}
+          onChange={(e) => setFormData({ ...formData, status: e.target.value as AppointmentStatus })}
+          className="focus-ring mt-1 w-full rounded-[1rem] border border-line bg-white px-3 py-2 text-sm"
+        >
+          {statusOrder.map((status) => (
+            <option key={status} value={status}>
+              {statusMeta[status].label}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="md:col-span-2">
+        <label className="text-sm font-semibold text-text">Notas</label>
+        <textarea
+          value={formData.notes}
+          onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+          className="focus-ring mt-1 w-full rounded-[1rem] border border-line bg-white px-3 py-2 text-sm"
+          rows={3}
+        />
+      </div>
+      <div className="md:col-span-2 flex gap-3">
+        <button type="submit" className="premium-button">
+          {appointment ? 'Guardar cambios' : 'Crear turno'}
+        </button>
+        <button type="button" onClick={onCancel} className="focus-ring rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-text shadow-soft">
+          Cancelar
+        </button>
+      </div>
+    </form>
   );
 }
 
@@ -224,6 +383,8 @@ export function StaffPortal() {
   const [isHydrated, setIsHydrated] = useState(false);
   const [managedAppointments, setManagedAppointments] =
     useState<Appointment[]>(baseAppointments);
+  const [showCreateForm, setShowCreateForm] = useState(false);
+  const [editingAppointment, setEditingAppointment] = useState<Appointment | null>(null);
 
   const hasSession = selectedProfileId !== null;
   const selectedEntryProfile = getProfile(entryProfileId);
@@ -345,6 +506,38 @@ export function StaffPortal() {
 
       return nextAppointments;
     });
+  }
+
+  function handleCreateAppointment(newAppointment: Omit<Appointment, 'id'>) {
+    const appointment: Appointment = {
+      ...newAppointment,
+      id: `apt-${Date.now()}`,
+    };
+    setManagedAppointments((current) => {
+      const next = [...current, appointment];
+      window.localStorage.setItem(APPOINTMENTS_STORAGE_KEY, JSON.stringify(next));
+      return next;
+    });
+  }
+
+  function handleUpdateAppointment(updatedAppointment: Appointment) {
+    setManagedAppointments((current) => {
+      const next = current.map((apt) =>
+        apt.id === updatedAppointment.id ? updatedAppointment : apt
+      );
+      window.localStorage.setItem(APPOINTMENTS_STORAGE_KEY, JSON.stringify(next));
+      return next;
+    });
+  }
+
+  function handleDeleteAppointment(appointmentId: string) {
+    if (confirm('¿Estás seguro de que quieres eliminar este turno?')) {
+      setManagedAppointments((current) => {
+        const next = current.filter((apt) => apt.id !== appointmentId);
+        window.localStorage.setItem(APPOINTMENTS_STORAGE_KEY, JSON.stringify(next));
+        return next;
+      });
+    }
   }
 
   function handleResetAppointments() {
@@ -706,6 +899,22 @@ export function StaffPortal() {
         </section>
       ) : null}
 
+      {canManageAppointments ? (
+        <section className="pt-10">
+          <Container>
+            <div className="flex justify-center">
+              <button
+                type="button"
+                onClick={() => setShowCreateForm(true)}
+                className="premium-button"
+              >
+                Crear turno
+              </button>
+            </div>
+          </Container>
+        </section>
+      ) : null}
+
       <section className="section-padding">
         <Container>
           <div className="card-surface p-6 sm:p-8">
@@ -776,6 +985,30 @@ export function StaffPortal() {
             </div>
           </div>
 
+          {(showCreateForm || editingAppointment) && canManageAppointments ? (
+            <div className="mt-8 card-surface p-6">
+              <h3 className="text-lg font-semibold text-text">
+                {editingAppointment ? 'Editar turno' : 'Crear nuevo turno'}
+              </h3>
+              <AppointmentForm
+                appointment={editingAppointment}
+                onSave={(apt) => {
+                  if (editingAppointment) {
+                    handleUpdateAppointment(apt);
+                    setEditingAppointment(null);
+                  } else {
+                    handleCreateAppointment(apt);
+                    setShowCreateForm(false);
+                  }
+                }}
+                onCancel={() => {
+                  setShowCreateForm(false);
+                  setEditingAppointment(null);
+                }}
+              />
+            </div>
+          ) : null}
+
           <div className="mt-8 grid gap-5">
             {groupedAppointments.map((day) => (
               <section key={day.id} className="card-surface p-5 sm:p-6">
@@ -802,6 +1035,8 @@ export function StaffPortal() {
                         showStaff={hasGlobalView}
                         canManage={canManageAppointments}
                         onStatusChange={handleStatusChange}
+                        onEdit={canManageAppointments ? setEditingAppointment : undefined}
+                        onDelete={canManageAppointments ? handleDeleteAppointment : undefined}
                       />
                     ))}
                   </div>
