@@ -1,4 +1,3 @@
-import { About } from "@/components/About";
 import { FloatingBookingButton } from "@/components/booking/FloatingBookingButton";
 import { BookingProvider } from "@/components/booking/BookingProvider";
 import { Collabs } from "@/components/Collabs";
@@ -19,7 +18,6 @@ export default function HomePage() {
         <Services />
         <Results />
         <Collabs />
-        <About />
         <Testimonials />
         <Products />
         <FinalCTA />

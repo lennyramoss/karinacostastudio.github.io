@@ -29,7 +29,17 @@ export function Footer() {
               Redes y horario
             </h3>
             <ul className="mt-4 space-y-3 leading-6">
-              <li>@karinaacostastudio</li>
+              <li>
+                <a 
+                  href="https://www.instagram.com/karinaacostastudio/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Seguinos en Instagram"
+                  className="underline hover:text-text transition-colors"
+                >
+                  @karinaacostastudio
+                </a>
+              </li>
               <li>Lunes,Martes,Jueves y Viernes de 10 a 19 hs</li>
               <li>Sábados de 10 a 17 hs</li>
             </ul>
