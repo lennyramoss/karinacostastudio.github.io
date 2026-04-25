@@ -36,6 +36,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   twitter: {
     card: "summary_large_image",
     title: "Karina Studio + | Estetica facial y corporal en San Fernando",
