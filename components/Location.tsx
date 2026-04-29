@@ -22,7 +22,7 @@ export function Location() {
           <div className="card-surface overflow-hidden rounded-[1.9rem]">
             <iframe
               title="Mapa de ubicación de Karina Studio + en San Fernando, Buenos Aires"
-              src="https://www.google.com/maps?q=Karina+Acosta+Studio%2B+Sarmiento+1058+San+Fernando&output=embed"
+              src="https://www.google.com/maps?q=-34.4453,-58.5638&z=14&output=embed"
               className="h-[340px] w-full border-0 sm:h-[400px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -33,5 +33,3 @@ export function Location() {
     </section>
   );
 }
-
-

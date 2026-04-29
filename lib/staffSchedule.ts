@@ -55,7 +55,7 @@ export const staffProfiles: StaffProfile[] = [
     badge: "Duena",
     accent: "#7ad3da",
     availability: "Acceso de supervision y consulta",
-    accessLabel: "Direccion Flor",
+    accessLabel: "Direccion",
     portalDescription:
       "Entra para revisar la agenda general del equipo sin figurar como trabajadora.",
     demoCode: "FLOR2026",
@@ -70,7 +70,7 @@ export const staffProfiles: StaffProfile[] = [
     badge: "Duena y empleada",
     accent: "#c6f371",
     availability: "Mar a Sab de 09:30 a 18:30",
-    accessLabel: "Direccion Kiki",
+    accessLabel: "Direccion y Staff",
     portalDescription:
       "Accede a la agenda semanal y acompana la operacion diaria del estudio.",
     demoCode: "KIKI2026",
@@ -85,7 +85,7 @@ export const staffProfiles: StaffProfile[] = [
     badge: "Empleada",
     accent: "#b17a63",
     availability: "Lun a Vie de 10:00 a 18:00",
-    accessLabel: "Cabina Candela",
+    accessLabel: "Staff",
     portalDescription:
       "Mira tus turnos de la semana y organiza rapido tus bloques de trabajo.",
     demoCode: "CANDE2026",
@@ -100,7 +100,7 @@ export const staffProfiles: StaffProfile[] = [
     badge: "Empleada",
     accent: "#f1bcbc",
     availability: "Lun, Mie, Jue y Vie de 10:00 a 18:00",
-    accessLabel: "Cabina Candelaria",
+    accessLabel: "Staff",
     portalDescription:
       "Consulta tu agenda personal y detecta al instante turnos confirmados y pendientes.",
     demoCode: "CANDELARIA2026",
@@ -115,7 +115,7 @@ export const staffProfiles: StaffProfile[] = [
     badge: "Empleada",
     accent: "#a3f8eb",
     availability: "Mar a Sab de 10:30 a 19:00",
-    accessLabel: "Gabinete Agustina",
+    accessLabel: "Staff",
     portalDescription:
       "Ten a mano tus servicios de la semana y el detalle de cada clienta.",
     demoCode: "AGUS2026",

@@ -33,21 +33,21 @@ export const bookingCategories: BookingCategory[] = [
 ];
 
 export const serviceProfessionals: Record<string, string[]> = {
-  "Diseño y perfilado": ["Karina", "Sofía", "Indistinto"],
-  "Laminado de cejas": ["Karina", "Sofía", "Indistinto"],
-  "Color touch": ["Karina", "Sofía", "Indistinto"],
-  Threading: ["Karina"],
-  Lifting: ["Karina", "Sofía"],
-  "Nutrición y botox en cejas y pestañas": ["Karina"],
-  "Pestañas pelo por pelo": ["Sofía"],
-  Microblading: ["Karina"],
-  "Pixel lips": ["Karina"],
-  "Hidra lips": ["Karina", "Indistinto"],
-  Babylips: ["Karina", "Indistinto"],
-  "Limpiezas faciales": ["Sofía", "Indistinto"],
-  Dermapen: ["Karina"],
-  Dermaplaning: ["Karina", "Sofía", "Indistinto"],
-  "Tratamientos personalizados": ["Indistinto"],
+  "Diseño y perfilado": ["Agustina", "Candela", "Candelaria", "Kiki", "Indistinto"],
+  "Laminado de cejas": ["Agustina", "Candela", "Candelaria", "Kiki", "Indistinto"],
+  "Color touch": ["Agustina", "Candela", "Candelaria", "Kiki", "Indistinto"],
+  Threading: ["Agustina", "Candela", "Candelaria", "Kiki"],
+  Lifting: ["Agustina", "Candela", "Candelaria", "Kiki"],
+  "Nutrición y botox en cejas y pestañas": ["Agustina", "Candela", "Candelaria", "Kiki"],
+  "Pestañas pelo por pelo": ["Agustina", "Candela", "Candelaria", "Kiki"],
+  Microblading: ["Agustina", "Candela", "Candelaria", "Kiki"],
+  "Pixel lips": ["Agustina", "Candela", "Candelaria", "Kiki"],
+  "Hidra lips": ["Agustina", "Candela", "Candelaria", "Kiki", "Indistinto"],
+  Babylips: ["Agustina", "Candela", "Candelaria", "Kiki", "Indistinto"],
+  "Limpiezas faciales": ["Agustina", "Candela", "Candelaria", "Kiki", "Indistinto"],
+  Dermapen: ["Agustina", "Candela", "Candelaria", "Kiki"],
+  Dermaplaning: ["Agustina", "Candela", "Candelaria", "Kiki", "Indistinto"],
+  "Tratamientos personalizados": ["Agustina", "Candela", "Candelaria", "Kiki", "Indistinto"],
 };
 
 export const bookingTimes = [

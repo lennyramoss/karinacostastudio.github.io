@@ -986,26 +986,61 @@ export function StaffPortal() {
           </div>
 
           {(showCreateForm || editingAppointment) && canManageAppointments ? (
-            <div className="mt-8 card-surface p-6">
-              <h3 className="text-lg font-semibold text-text">
-                {editingAppointment ? 'Editar turno' : 'Crear nuevo turno'}
-              </h3>
-              <AppointmentForm
-                appointment={editingAppointment}
-                onSave={(apt) => {
-                  if (editingAppointment) {
-                    handleUpdateAppointment(apt);
-                    setEditingAppointment(null);
-                  } else {
-                    handleCreateAppointment(apt);
-                    setShowCreateForm(false);
-                  }
-                }}
-                onCancel={() => {
-                  setShowCreateForm(false);
-                  setEditingAppointment(null);
-                }}
-              />
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-[#1d232b]/40 px-4 py-6 backdrop-blur-sm"
+              role="presentation"
+              onClick={() => {
+                setShowCreateForm(false);
+                setEditingAppointment(null);
+              }}
+            >
+              <div
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="appointment-dialog-title"
+                className="w-full max-w-3xl"
+                onClick={(event) => event.stopPropagation()}
+              >
+                <div className="card-surface overflow-hidden rounded-[2rem] border border-white/40 bg-[rgba(252,249,245,0.96)] shadow-[0_30px_80px_rgba(17,24,39,0.18)]">
+                  <div className="flex items-start justify-between gap-4 border-b border-line/80 px-6 py-5">
+                    <div>
+                      <p className="eyebrow">{editingAppointment ? 'Editar turno' : 'Crear nuevo turno'}</p>
+                      <h2 id="appointment-dialog-title" className="mt-3 text-2xl font-semibold text-text">
+                        {editingAppointment ? 'Editar turno' : 'Crear nuevo turno'}
+                      </h2>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowCreateForm(false);
+                        setEditingAppointment(null);
+                      }}
+                      className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/70 text-xl text-text"
+                      aria-label="Cerrar modal de turno"
+                    >
+                      ×
+                    </button>
+                  </div>
+                  <div className="p-6">
+                    <AppointmentForm
+                      appointment={editingAppointment}
+                      onSave={(apt) => {
+                        if (editingAppointment) {
+                          handleUpdateAppointment(apt);
+                          setEditingAppointment(null);
+                        } else {
+                          handleCreateAppointment(apt);
+                          setShowCreateForm(false);
+                        }
+                      }}
+                      onCancel={() => {
+                        setShowCreateForm(false);
+                        setEditingAppointment(null);
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           ) : null}
 
