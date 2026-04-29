@@ -23,7 +23,6 @@ export default function HomePage() {
         <Products />
         <FinalCTA />
         <Location />
-        <InternalPortalCTA />
         <Footer />
       </main>
       <FloatingBookingButton />
